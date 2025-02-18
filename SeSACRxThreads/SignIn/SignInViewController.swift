@@ -56,6 +56,16 @@ class SignInViewController: UIViewController {
 //                owner.view.backgroundColor = value
 //            }
 //            .disposed(by: disposeBag)
+        signUpButton
+            .rx
+            .tap
+            .bind { _ in
+                self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+     
+        
         
         backgroundColor
             .bind(to: view.rx.backgroundColor)
