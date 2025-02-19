@@ -54,66 +54,22 @@ class SearchViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    
-    func bind() { //  코드 한단락으로 테이블뷰 모두 세팅한것 cellForRowAt이나 DidSelect나 등등
-        print(#function)
-        
-        // 서치바 리턴 클릭
-        //        searchBar.rx.searchButtonClicked
-        //            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-        //            .withLatestFrom(searchBar.rx.text.orEmpty)
-        //            .distinctUntilChanged()
-        //            .bind(with: self) { owner, value in
-        //                print("리턴키 클릭", value)
-        //            }
-        //            .disposed(by: disposeBag)
-        
-        // 실시간 검색
-        searchBar.rx.text.orEmpty
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .bind(with: self) { owner, value in
-                print("실시간 글자", value)
-            }
-            .disposed(by: disposeBag)
-        
+    func bind() {
         items
-            .bind(to: tableView.rx.items) { (tableView, row, element) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as! SearchTableViewCell
-                cell.appNameLabel.text = "\(element) @ row \(row)"
-                return cell
+            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { (row, element, cell ) in
+                cell.appNameLabel.text = element
+                cell.appIconImageView.backgroundColor = .lightGray
             }
             .disposed(by: disposeBag)
         
-        func text() {
-            
-            let mentor = Observable.of("Hue", " Jack", "Bran", "Den")
-            let age = Observable.of(10,11,12,13)
-            
-            Observable.zip(mentor, age)
-                .bind(with: self) { owner, value in
-                    <#code#>
-                }
-        }
         
-        //2개이상의 옵저버블을 하나로 합쳐줌! // 셀이 두번클릭되는것을 한번으로 줄여줌
-        Observable.zip(
-            tableView.rx.itemSelected,
-            tableView.rx.modelSelected(String.self)
-        )
-        
-        tableView.rx.itemSelected
-            .bind { index in
-                print(index)
+        //서치바 + 엔터+ append
+        searchBar.rx.searchButtonClicked // return키 탭했을때 기능이 들어가 있음
+            .withLatestFrom(searchBar.rx.text.orEmpty)
+            .bind(with: self) { owner, woosuk in
+                print("search Tapped", owner.searchBar.text, woosuk) // 시점확인
             }
             .disposed(by: disposeBag)
-        
-        tableView.rx.modelSelected(String.self)
-            .bind(with: self) { owner, value in
-                print(value)
-            }
-            .disposed(by: disposeBag)
-        
     }
     
     private func setSearchController() {

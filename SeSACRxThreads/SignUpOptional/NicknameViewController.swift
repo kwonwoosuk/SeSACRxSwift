@@ -58,7 +58,7 @@ class NicknameViewController: UIViewController {
     }
     
     @objc func nextButtonClicked() {
-        navigationController?.pushViewController(BirthdayViewController(), animated: true)
+        navigationController?.pushViewController(BirthDayViewController(), animated: true)
     }
 
     
