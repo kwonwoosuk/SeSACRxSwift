@@ -68,11 +68,11 @@ class SignUpViewController: UIViewController {
             } onError: { owner, value in
                 print("JUST \(value)")
             } onCompleted: { owner in
-                print("JUsst")
+                print("Just")
             } onDisposed: { owner in
-                print("JUST")
+                print("Just")
             }
-
+    
         
     }
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DC012C5B0D8200667F4D /* DetailViewController.swift */; };
 		4D4D37A52D65646B00C6F12A /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D37A42D65646B00C6F12A /* PhoneViewModel.swift */; };
 		4D4D37A72D65718500C6F12A /* BirthDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D37A62D65718500C6F12A /* BirthDayViewModel.swift */; };
+		4D4D3C402D66EF8E00B0EFE0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */; };
 		4D7CC6862D62C24D0080D703 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 4D7CC6852D62C24D0080D703 /* RxCocoa */; };
 		4D7CC6882D62C24D0080D703 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D7CC6872D62C24D0080D703 /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -80,11 +81,16 @@
 		4D4D37A62D65718500C6F12A /* BirthDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4D4D3C372D66EF3800B0EFE0 /* Recap */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Recap; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		0412801D2AEF9BAB00972552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4D3C402D66EF8E00B0EFE0 /* Kingfisher in Frameworks */,
 				4D7CC6882D62C24D0080D703 /* RxSwift in Frameworks */,
 				4D7CC6862D62C24D0080D703 /* RxCocoa in Frameworks */,
 				04B0606A2D62A9D300A3155E /* SnapKit in Frameworks */,
@@ -131,6 +137,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				4D4D3C372D66EF3800B0EFE0 /* Recap */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
@@ -227,11 +234,15 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				4D4D3C372D66EF3800B0EFE0 /* Recap */,
+			);
 			name = SeSACRxThreads;
 			packageProductDependencies = (
 				04B060692D62A9D300A3155E /* SnapKit */,
 				4D7CC6852D62C24D0080D703 /* RxCocoa */,
 				4D7CC6872D62C24D0080D703 /* RxSwift */,
+				4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */,
 			);
 			productName = SeSACRxThreads;
 			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads.app */;
@@ -308,6 +319,7 @@
 			packageReferences = (
 				04B060682D62A9D300A3155E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4D7CC6842D62C24D0080D703 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				4D4D3C3E2D66EF8E00B0EFE0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -541,6 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z388Z4UCTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACRxThreads/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "영등포6기";
@@ -573,6 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z388Z4UCTV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACRxThreads/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "영등포6기";
@@ -716,6 +730,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		4D4D3C3E2D66EF8E00B0EFE0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
 		4D7CC6842D62C24D0080D703 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -731,6 +753,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04B060682D62A9D300A3155E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D4D3C3E2D66EF8E00B0EFE0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		4D7CC6852D62C24D0080D703 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

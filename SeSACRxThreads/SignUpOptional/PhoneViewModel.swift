@@ -44,7 +44,6 @@ final class PhoneViewModel {
         return Output( // == nextButton.rx.tap
             tap: input.tap, // input을 통해 들어온 탭을 그대로 내 뱉겠다 == void로 다시 돌려보냈던거랑 같은 행동을 이렇게 한다
             text: buttonText,
-            
             validation: validation
         )
     }

@@ -1,36 +1,25 @@
 //
-//  SearchTableViewCell.swift
-//  SeSACRxThreads
+//  UserTableViewCell.swift
+//  iOSAcademy-RxSwift
 //
-//  Created by jack on 8/1/24.
+//  Created by Jack on 1/30/25.
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import SnapKit
 
-final class SearchTableViewCell: UITableViewCell {
+final class PersonTableViewCell: UITableViewCell {
     
+    static let identifier = "PersonTableViewCell"
     
-    
-    static let identifier = "SearchTableViewCell"
- 
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        //구독을 해제
-        disposeBag = DisposeBag() // 재사용시 새로운 인스턴스를 갈아끼워주는 방식으로 중첩을 해결 할 수있을것 같다 !
-    }
-    
-    let appNameLabel: UILabel = {
+    let usernameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
         return label
     }()
     
-    let appIconImageView: UIImageView = {
+    let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -39,7 +28,7 @@ final class SearchTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    let downloadButton: UIButton = {
+    let detailButton: UIButton = {
         let button = UIButton()
         button.setTitle("받기", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
@@ -48,9 +37,7 @@ final class SearchTableViewCell: UITableViewCell {
         button.layer.cornerRadius = 16
         return button
     }()
-     
-    var disposeBag = DisposeBag()
-     
+      
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -64,29 +51,28 @@ final class SearchTableViewCell: UITableViewCell {
      
     
     private func configure() {
-        contentView.addSubview(appNameLabel)
-        contentView.addSubview(appIconImageView)
-        contentView.addSubview(downloadButton)
+        contentView.addSubview(usernameLabel)
+        contentView.addSubview(profileImageView)
+        contentView.addSubview(detailButton)
         
-        appIconImageView.snp.makeConstraints {
+        profileImageView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(20)
             $0.size.equalTo(60)
         }
         
-        appNameLabel.snp.makeConstraints {
-            $0.centerY.equalTo(appIconImageView)
-            $0.leading.equalTo(appIconImageView.snp.trailing).offset(8)
-            $0.trailing.equalTo(downloadButton.snp.leading).offset(-8)
+        usernameLabel.snp.makeConstraints {
+            $0.centerY.equalTo(profileImageView)
+            $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
+            $0.trailing.equalTo(detailButton.snp.leading).offset(-8)
         }
         
-        downloadButton.snp.makeConstraints {
-            $0.centerY.equalTo(appIconImageView)
+        detailButton.snp.makeConstraints {
+            $0.centerY.equalTo(profileImageView)
             $0.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(32)
             $0.width.equalTo(72)
         }
     }
 }
-
 

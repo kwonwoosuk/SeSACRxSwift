@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class BirthDayViewController: ViewController {
+class BirthDayViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
