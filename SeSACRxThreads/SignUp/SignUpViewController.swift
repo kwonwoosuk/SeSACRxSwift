@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class SignUpViewController: UIViewController {
-
+    
     let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
     let validationButton = UIButton()
     let nextButton = PointButton(title: "다음")
@@ -31,9 +31,9 @@ class SignUpViewController: UIViewController {
             .orEmpty // String
             .map { $0.count >= 4 }
         
-//        validation
-//            .bind(to: validationButton.rx.isEnabled)
-//            .disposed(by: disposeBag)
+        //        validation
+        //            .bind(to: validationButton.rx.isEnabled)
+        //            .disposed(by: disposeBag)
         validation
             .subscribe(with: self) { owner, value in
                 owner.validationButton.isEnabled = value
@@ -41,9 +41,9 @@ class SignUpViewController: UIViewController {
             }  onDisposed: { owner in
                 print("Validation Disposed")
             }
-//            .dispose() //이메일에 아무리 열심히 만들어도 옵저버 구독취소를 했기떄문에 소용없다 // dispose는 바로 취소되다 보니 직접 불러 쓸일이 거의 없다
+        //            .dispose() //이메일에 아무리 열심히 만들어도 옵저버 구독취소를 했기떄문에 소용없다 // dispose는 바로 취소되다 보니 직접 불러 쓸일이 거의 없다
             .disposed(by: disposeBag)// 당장은 구독 취소 안하고 disposeBag이 살아있을때까지 구독
-
+        
         
         validationButton.rx.tap
             .bind(with: self) { owner, _ in
@@ -72,26 +72,26 @@ class SignUpViewController: UIViewController {
             } onDisposed: { owner in
                 print("Just")
             }
-    
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = Color.white
         
         configureLayout()
         configure()
         bind()
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-
+        
     }
     
     @objc func nextButtonClicked() {
         navigationController?.pushViewController(PasswordViewController(), animated: true)
     }
-
+    
     func configure() {
         validationButton.setTitle("중복확인", for: .normal)
         validationButton.setTitleColor(Color.black, for: .normal)
@@ -126,5 +126,5 @@ class SignUpViewController: UIViewController {
         }
     }
     
-
+    
 }

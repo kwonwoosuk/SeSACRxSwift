@@ -35,7 +35,6 @@ class DetailViewController: UIViewController {
     
     
     func bind() {
-        
         let tap = nextButton.rx.tap
             .map { Int.random(in: 1...100) } // 같은결과를 다른곳에 보여주고 싶어서 여기까지 상수에 담는것
             .share() // 상수로 묶어 제역할을 할 수 있어진다 원하던대로 !!

@@ -123,7 +123,6 @@ class SignInViewController: UIViewController {
 //            }
 //            .disposed(by: disposeBag)
         
-        
         emailText
             .subscribe { value in
                 self.emailTextField.text = value
