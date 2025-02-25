@@ -28,6 +28,9 @@
 		04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */; };
 		04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */; };
 		04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DC012C5B0D8200667F4D /* DetailViewController.swift */; };
+		4D2A27262D6D66D9003FD16B /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2A27252D6D66D9003FD16B /* Differentiator */; };
+		4D2A27282D6D66D9003FD16B /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 4D2A27272D6D66D9003FD16B /* RxDataSources */; };
+		4D2A272A2D6D6762003FD16B /* MultiSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2A27292D6D6762003FD16B /* MultiSectionViewController.swift */; };
 		4D4D37A52D65646B00C6F12A /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D37A42D65646B00C6F12A /* PhoneViewModel.swift */; };
 		4D4D37A72D65718500C6F12A /* BirthDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D37A62D65718500C6F12A /* BirthDayViewModel.swift */; };
 		4D4D3C402D66EF8E00B0EFE0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */; };
@@ -80,6 +83,7 @@
 		04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		04F6DC012C5B0D8200667F4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4D2A27292D6D6762003FD16B /* MultiSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionViewController.swift; sourceTree = "<group>"; };
 		4D4D37A42D65646B00C6F12A /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		4D4D37A62D65718500C6F12A /* BirthDayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayViewModel.swift; sourceTree = "<group>"; };
 		4D4D3F642D6BF68000B0EFE0 /* NewSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +101,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4D3C402D66EF8E00B0EFE0 /* Kingfisher in Frameworks */,
+				4D2A27262D6D66D9003FD16B /* Differentiator in Frameworks */,
 				4D7CC6882D62C24D0080D703 /* RxSwift in Frameworks */,
+				4D2A27282D6D66D9003FD16B /* RxDataSources in Frameworks */,
 				4D7CC6862D62C24D0080D703 /* RxCocoa in Frameworks */,
 				04B0606A2D62A9D300A3155E /* SnapKit in Frameworks */,
 			);
@@ -224,6 +230,7 @@
 				4D4D3F642D6BF68000B0EFE0 /* NewSearchViewController.swift */,
 				4D4D3F662D6BF87B00B0EFE0 /* NewSearchViewModel.swift */,
 				4D4D3F682D6C0B2300B0EFE0 /* NetworkManager.swift */,
+				4D2A27292D6D6762003FD16B /* MultiSectionViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -252,6 +259,8 @@
 				4D7CC6852D62C24D0080D703 /* RxCocoa */,
 				4D7CC6872D62C24D0080D703 /* RxSwift */,
 				4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */,
+				4D2A27252D6D66D9003FD16B /* Differentiator */,
+				4D2A27272D6D66D9003FD16B /* RxDataSources */,
 			);
 			productName = SeSACRxThreads;
 			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads.app */;
@@ -329,6 +338,7 @@
 				04B060682D62A9D300A3155E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4D7CC6842D62C24D0080D703 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				4D4D3C3E2D66EF8E00B0EFE0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4D2A27242D6D66D9003FD16B /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -381,6 +391,7 @@
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				4D4D3F652D6BF68000B0EFE0 /* NewSearchViewController.swift in Sources */,
 				4D4D3F672D6BF87B00B0EFE0 /* NewSearchViewModel.swift in Sources */,
+				4D2A272A2D6D6762003FD16B /* MultiSectionViewController.swift in Sources */,
 				4D4D3F692D6C0B2300B0EFE0 /* NetworkManager.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */,
@@ -742,6 +753,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		4D2A27242D6D66D9003FD16B /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		4D4D3C3E2D66EF8E00B0EFE0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -765,6 +784,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04B060682D62A9D300A3155E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		4D2A27252D6D66D9003FD16B /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2A27242D6D66D9003FD16B /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		4D2A27272D6D66D9003FD16B /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D2A27242D6D66D9003FD16B /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		4D4D3C3F2D66EF8E00B0EFE0 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

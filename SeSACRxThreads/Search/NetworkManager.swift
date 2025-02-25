@@ -61,9 +61,9 @@ final class NetworkManager {
                 if let data = data {
                     do  {
                         let result = try JSONDecoder().decode(Movie.self, from: data)
-//                        value.onError(APIError.statusError)
-                        value.onNext(result)
-                        value.onCompleted()
+                        value.onError(APIError.statusError)
+//                        value.onNext(result)
+//                        value.onCompleted()
                     } catch {
                         value.onError(APIError.unknownResponse)
                     }
@@ -112,6 +112,49 @@ final class NetworkManager {
                     }
                 } else {
                     value(.failure(APIError.unknownResponse))
+                }
+            }.resume()
+            
+            return Disposables.create {
+                print("끝")
+            }
+            
+        }
+        
+    }
+    func callBoxOfficeWithSingle2(date: String) -> Single<Result<Movie, APIError>> { //  나도 ResultType던지면 안되나?
+        
+        return Single<Result<Movie, APIError>>.create { value in
+            let urlString = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=07918ad2a80648eb7bd0d5fb50437098&targetDt=\(date)"
+            
+            guard let url = URL(string: urlString)
+            else {
+                
+                value(.success(.failure(APIError.invalidURL))) // 실패를 감싼 성공을 던지는거다 , 이런발상을 해낸놈은 뭐하는 놈일까...
+                return Disposables.create()  // {dispose가 되면 신호를 받고 싶거나 그때 무언가 하고싶을때 클로저 써주는것 (선택사항)}
+            }
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    value(.success(.failure(APIError.unknownResponse)))
+                    return
+                }
+                
+                guard let response = response as? HTTPURLResponse,
+                      (200...299).contains(response.statusCode) else {
+                    value(.success(.failure(APIError.statusError)))
+                    return
+                }
+                
+                if let data = data {
+                    do  {
+                        let result = try JSONDecoder().decode(Movie.self, from: data)
+                        value(.success(.success(result)))
+                    } catch {
+                        value(.success(.failure(APIError.unknownResponse)))
+                    }
+                } else {
+                    value(.success(.failure(APIError.unknownResponse)))
                 }
             }.resume()
             
