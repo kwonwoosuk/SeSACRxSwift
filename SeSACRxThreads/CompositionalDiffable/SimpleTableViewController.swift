@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-
+//0226
 final class SimpleTableViewController: UIViewController {
 
     private lazy var tableView = {
