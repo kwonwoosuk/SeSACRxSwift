@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let rootViewController = UINavigationController(rootViewController: MultiSectionViewController()) // SignInViewController SearchViewController / PhoneViewController
+        let rootViewController = UINavigationController(rootViewController: SimpleTableViewController()) // SignInViewController SearchViewController / PhoneViewController
          
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
