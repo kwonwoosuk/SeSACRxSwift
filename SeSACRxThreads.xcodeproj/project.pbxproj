@@ -41,6 +41,8 @@
 		4D7CC6882D62C24D0080D703 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D7CC6872D62C24D0080D703 /* RxSwift */; };
 		4DDF75652D6E9DC30097F63E /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF75642D6E9DC30097F63E /* SimpleTableViewController.swift */; };
 		4DDF75672D6EA2490097F63E /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF75662D6EA2490097F63E /* SimpleCollectionViewController.swift */; };
+		4DE71B452D6FEA8C00385E9F /* CompositionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE71B442D6FEA8C00385E9F /* CompositionalViewController.swift */; };
+		4DE71B472D70000F00385E9F /* CompositionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE71B462D70000F00385E9F /* CompositionalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		4D4D3F682D6C0B2300B0EFE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4DDF75642D6E9DC30097F63E /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		4DDF75662D6EA2490097F63E /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		4DE71B442D6FEA8C00385E9F /* CompositionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalViewController.swift; sourceTree = "<group>"; };
+		4DE71B462D70000F00385E9F /* CompositionalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -245,6 +249,8 @@
 			children = (
 				4DDF75642D6E9DC30097F63E /* SimpleTableViewController.swift */,
 				4DDF75662D6EA2490097F63E /* SimpleCollectionViewController.swift */,
+				4DE71B442D6FEA8C00385E9F /* CompositionalViewController.swift */,
+				4DE71B462D70000F00385E9F /* CompositionalCollectionViewCell.swift */,
 			);
 			path = CompositionalDiffable;
 			sourceTree = "<group>";
@@ -403,7 +409,9 @@
 				4DDF75672D6EA2490097F63E /* SimpleCollectionViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				4D4D37A52D65646B00C6F12A /* PhoneViewModel.swift in Sources */,
+				4DE71B472D70000F00385E9F /* CompositionalCollectionViewCell.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				4DE71B452D6FEA8C00385E9F /* CompositionalViewController.swift in Sources */,
 				4D4D3F652D6BF68000B0EFE0 /* NewSearchViewController.swift in Sources */,
 				4D4D3F672D6BF87B00B0EFE0 /* NewSearchViewModel.swift in Sources */,
 				4D2A272A2D6D6762003FD16B /* MultiSectionViewController.swift in Sources */,

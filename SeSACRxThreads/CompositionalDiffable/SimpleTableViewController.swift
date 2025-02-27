@@ -40,7 +40,7 @@ extension SimpleTableViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")!
 //        cell.textLabel?.text = "test"
-        // ListCell⭐️, ViewConfiguration   == Presentation-> 구조체 기반이고 프로토콜 기반이고 하는것을 보여주고 싶었다
+        // ListCell⭐️, ViewConfiguration == Presentation-> 구조체 기반이고 프로토콜 기반이고 하는것을 보여주고 싶었다
         var content = cell.defaultContentConfiguration() // => UIListContentConfiguration을 반환한다
         
         content.text = "그냥 텍스트"

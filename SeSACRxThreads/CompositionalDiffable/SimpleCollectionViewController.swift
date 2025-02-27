@@ -37,12 +37,11 @@ struct Product: Hashable, Identifiable { // 왜 채택 해야하는가? -> 고�
 
 
 final class SimpleCollectionViewController: UIViewController {
-    
     enum Section: CaseIterable {
         case main
         case sub
     }
-
+    
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     //    // collectionView.register 대신 // UICollectionViewListCell 시스템셀 역할
@@ -80,7 +79,7 @@ final class SimpleCollectionViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
-                collectionView.delegate = self
+        collectionView.delegate = self
         //        collectionView.dataSource = self
     }
     
@@ -113,9 +112,10 @@ final class SimpleCollectionViewController: UIViewController {
         //        var registration: UICollectionView.CellRegistration<UICollectionViewListCell, Product>! //  무조건 값이 들어올거니까 !로 해결쓰 -> 선언과 초기화를 밑에서 합침 🔵
         //                                                                                  ↑ 타입 일치를 아래 item과 일치 시켜줘야디 !
         // cellForItemAt에 작성 했던 코드 들이 registration안에 들어가는 것 !  // 컬렉션부에서 register하는 과정이 같이 들어가있는게 registration이라고 보면 될거 같다
-        var registration = UICollectionView.CellRegistration<UICollectionViewListCell, Product> { cell, indexPath, itemIdentifier in // 🔵
+        let registration = UICollectionView.CellRegistration<UICollectionViewListCell, Product> { cell, indexPath, itemIdentifier in // 🔵
             
             var content = UIListContentConfiguration.valueCell()
+            
             
             content.text = itemIdentifier.name
             content.textProperties.color = .brown
@@ -196,15 +196,15 @@ final class SimpleCollectionViewController: UIViewController {
 extension SimpleCollectionViewController: UICollectionViewDelegate  { // UICollectionViewDataSource// Diffable이 대체 하기때문에 이 프로토콜을 사용하지 않게 된다
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        let data = list[indexPath.item] //  diffable에서 이거 이상하잖아~
-//        dump(data)
+        //        let data = list[indexPath.item] //  diffable에서 이거 이상하잖아~
+        //        dump(data)
         let data = dataSource.itemIdentifier(for: indexPath)
         
         
-//        list.remove(at: indexPath.item)
-//        let product = Product(name: "고래밥\(Int.random(in: 1...100))")
-////        list.append(product)
-//        list.insert(product, at: 2)
+        //        list.remove(at: indexPath.item)
+        //        let product = Product(name: "고래밥\(Int.random(in: 1...100))")
+        ////        list.append(product)
+        //        list.insert(product, at: 2)
         updateSnapShot()
     }
     
